@@ -9,5 +9,5 @@ export default function getListStudentIds(arr) {
     return [];
   }
 
-  return arr.map((student) => student.id).filter((id) => !isNaN(id));
+  return arr.map((student) => student.id).filter((id) => !Number.isNaN(id));
 }
