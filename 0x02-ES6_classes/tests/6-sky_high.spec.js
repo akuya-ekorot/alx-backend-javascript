@@ -19,8 +19,10 @@ describe('Sky High', () => {
 
   test('should override the evacuationWarningMessage method', () => {
     const skyHigh = new SkyHighBuilding(1000, 10);
+
+    expect(typeof skyHigh.evacuationWarningMessage).toBe('function');
     expect(skyHigh.evacuationWarningMessage()).toBe(
-      'Evacuate slowly the 10 floors!',
+      'Evacuate slowly the 10 floors',
     );
   });
 });
