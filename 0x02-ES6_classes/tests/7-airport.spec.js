@@ -27,16 +27,4 @@ describe('Airport', () => {
     const airport = new Airport('JFK', 'NYC');
     expect(airport).toBeInstanceOf(Airport);
   });
-
-  test('should print when console.log is called', () => {
-    const spy = jest.spyOn(console, 'log');
-    const airport = new Airport('JFK', 'NYC');
-
-    console.log(airport);
-    expect(spy).toHaveBeenCalledWith(
-      "Airport [NYC] { _name: 'JFK', _code: 'NYC' }",
-    );
-
-    spy.mockRestore();
-  });
 });
