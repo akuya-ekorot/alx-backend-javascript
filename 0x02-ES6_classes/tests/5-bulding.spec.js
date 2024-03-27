@@ -1,8 +1,13 @@
 import Building from '../5-building';
 
 describe('Building', () => {
-  test('cannot be instantiated', () => {
-    expect(() => new Building(100)).toThrow(Error);
+  test('constructor', () => {
+    const building = new Building(100);
+    expect(building._sqft).toBe(100);
+  });
+
+  test('sqft type error', () => {
+    expect(() => new Building('100')).toThrow(TypeError);
   });
 
   test('evacuationWarningMessage not implemented', () => {
@@ -10,7 +15,7 @@ describe('Building', () => {
     expect(() => new TestBuilding(100)).toThrow(Error);
   });
 
-  test('constructor', () => {
+  test('extending Building', () => {
     class TestBuilding extends Building {
       evacuationWarningMessage() {
         return 'test message';
@@ -18,14 +23,5 @@ describe('Building', () => {
     }
     const testBuilding = new TestBuilding(100);
     expect(testBuilding._sqft).toBe(100);
-  });
-
-  test('sqft type error', () => {
-    class TestBuilding extends Building {
-      evacuationWarningMessage() {
-        return 'test message';
-      }
-    }
-    expect(() => new TestBuilding('100')).toThrow(TypeError);
   });
 });
