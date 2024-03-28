@@ -5,8 +5,4 @@ describe('listOfStudents', () => {
     expect(Array.isArray(listOfStudents)).toBe(true);
     expect(listOfStudents).toHaveLength(5);
   });
-
-  test('should print list of students', () => {
-    console.log(listOfStudents);
-  });
 });
